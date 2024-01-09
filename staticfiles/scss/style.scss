@@ -1,0 +1,393 @@
+/* =======================================================================
+Template Name: Youtubers
+Author:  SmartEye Technologies
+Author URI: www.smarteyeapps.com
+Version: 1.0
+coder name:Prabin Raja
+Description: This Template is created for Youtubers
+======================================================================= */
+
+/* ===================================== Import Variables ================================== */
+@import 'variable';
+/* ===================================== Basic CSS ==================================== */
+@import 'base/basic_setup';
+
+
+.header-container{
+    background-color: #FFF;
+    @include shado-1();
+    position: absolute;
+    width: 100%;
+    .top-row {
+        padding: 15px;
+    }
+    .logocol{
+        img{
+            max-width: 230px;
+        }
+    }
+    .infocol{
+        ul{
+            float: right;
+            li{
+                float: left;
+                padding: 20px;
+                font-size: 1rem;
+                font-weight: 600;
+                color: $color-primary;
+            }
+        }
+    }
+    .nav-row{
+        background-color: $color-primary;
+        ul{
+            li{
+                float: left;
+                padding: 15px 30px;
+                font-weight: 600;
+                font-size: 1.1rem;
+                a{
+                    color: #FFF;
+                }
+                @media screen and (max-width: 767px){
+                    float: none;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .navbar-toggler{
+        float: right;
+        i{
+            font-size: 2rem;
+            margin-top: 5px;
+           
+        }
+        
+    }
+}
+
+//Slider Starts Here
+
+.slider{
+    background-color: $color-primary;
+    padding-top: 150px;
+    @media screen and (max-width: 767px){
+        padding: 50px;
+        padding-top: 100px;
+    }
+     @media screen and (max-width: 467px){
+        padding: 25px;
+        padding-top: 100px;
+    }
+    .imageslid{
+        
+    }
+    .contentslid{
+        padding-top: 100px;
+        h1{
+            font-size: 4rem;
+            font-weight: 700;
+            color: #FFF;
+            margin-bottom: 40px;
+        }
+        p{
+            color: #FFF;
+            font-weight: 600;
+           
+        }
+        .btn{
+            margin-top: 25px;
+            padding: 7px 50px;
+            font-weight: 600;
+            margin-right: 15px;
+            border-radius: 50px;
+        }
+    }
+}
+
+
+
+//Service Starts Here
+
+.services {
+  background-color: #FFF;
+  @include big-padding();
+  .servic-row {
+    .servcover {
+       border-radius: 10px;
+      background-color: #fff;
+      padding: 30px;
+      text-align: center;
+      img {
+        margin-bottom: 20px;
+        border-radius: 3px;          
+      }
+      h4 {
+        margin-bottom: 15px;
+        font-size: 1.4rem;
+      }
+      p {
+        margin-bottom: 10px;
+      }
+    }
+    .span {
+      background-color: #17adb6;
+      color: #fff;
+      padding: 5px 25px;
+      font-weight: 600;
+      border-radius: 15px;
+      @include shado-1();
+      margin: auto;
+      margin-top: -17px;
+      margin-left: -20px;
+      width: 120px;
+    }
+    .servic-col {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .mor-cover {
+      position: absolute;
+      margin-top: -15px;
+    }
+  }
+}
+
+
+
+.bg-06{
+    padding:3.125rem 0;
+    position: relative;
+    background: #f3f8fc;
+    overflow: hidden;
+
+    
+
+    .blog-sub{
+        position: relative;
+        margin:20px 0px;
+        padding:20px 0px;
+
+        .blog-content{
+            border-top-right-radius: 6px;
+            border-top-left-radius: 6px;
+            position: relative;
+            display: block;
+            overflow: hidden;
+        }
+
+        .blog-content-section{
+            padding: 20px 25px;
+            background: #fff;
+            border: solid 1px #eee8e8;
+            border-top: 0;
+            display: block;
+            width: 100%;
+
+            .blo-content-title{
+                 h4{
+                    font-size: 1rem;
+                    font-weight: 600;
+                    padding: 3px 0px;
+                }
+                p{
+                    padding: 3px 0px;
+                    line-height: 27px;
+                    font-size: .9rem;
+                }
+            }
+
+            .blog-admin{
+                margin: 5px 0px;
+
+                ol{
+                    padding-left: 0px;
+                    li{
+                        display: inline-block;
+                        font-size: 15px;
+                        margin: 0 5px 0 0;
+                        margin-right: 10px;
+                        i{
+                            padding: 0 5px 0 0;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+//Footter Style
+
+.footer-ablove {
+  padding: 30px;
+  color: #fff;
+  font-size: 1.5rem;
+}
+.footer-ablove .btn {
+  float: right;
+ 
+  font-family: "mouse-500", Arial, Helvetica, sans-serif;
+}
+
+footer {
+  padding: 80px 50px;
+  background-color: $color-primary;
+  color: #fff;
+}
+@media screen and (max-width: 940px) {
+  footer {
+    padding: 50px 10px;
+  }
+}
+footer h2 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+footer .about p {
+  font-size: 0.9em;
+  margin-bottom: 20px;
+}
+footer .about .foot-address {
+  display: flex;
+}
+footer .about .foot-address .icon {
+  padding: 20px 10px;
+}
+footer .about .foot-address .addet {
+  font-size: 0.9rem;
+  margin: auto 0px;
+}
+footer .fotblog .blohjb {
+  margin-bottom: 10px;
+}
+footer .fotblog .blohjb p {
+  font-size: 0.9rem;
+}
+footer .fotblog .blohjb span {
+  font-size: 0.9rem;
+}
+footer .glink ul li {
+  padding: 10px;
+}
+footer .glink ul li i {
+  margin-right: 10px;
+}
+footer .glink ul li a {
+  color: #fff;
+}
+footer .tags ul li {
+  float: left;
+  padding: 8px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+}
+
+.copy {
+  padding: 20px;
+  background-color:rgba(63, 65, 153, 0.97);
+  color: #fff;
+}
+.copy a {
+  color: #fff;
+}
+.copy span {
+  float: right;
+}
+.copy span i {
+  margin-right: 20px;
+}
+
+.cop-ck {
+  padding: 20px;
+  background-color: #ffffffbd;
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+}
+
+
+/* ===================================== Testimonial CSS ================================== */
+
+.our-team{
+	@include big-padding();
+	.team-row{
+		.single-usr{
+			background-color: #FFF;
+			@include shado-3();
+			border-radius: 5px;
+			@media screen and (max-width: 767px) {
+				margin-bottom: 30px;
+			}
+			img{
+
+			}
+			.det-o{
+				text-align: center;
+				padding: 10px;
+				h4{
+					font-size: 1.1rem;
+                    margin-bottom: 2px;
+                    font-weight: 600;
+				}
+				i{
+                    font-size: .85rem;
+				}
+			}
+		}
+	}
+}
+
+
+
+.about-coo{
+	
+	background-color: #FFF;
+	@include big-padding();
+	.about-row{
+		
+		.about-img{
+			text-align: center;
+			margin: auto;
+			img{
+				
+				@media only screen and (max-width: 767px) {
+					width: 100%;
+				}
+				@media only screen and (max-width: 476px) {
+					margin-bottom: 30px;
+				}
+			}
+		}
+		.about-text{
+			h1{
+				margin-bottom: 30px;
+				font-size: 2rem;
+				line-height: 40px;
+			}
+			p{
+				margin-bottom: 30px;
+			}
+			.about-featur{
+				ul{
+					width: 100%;
+					margin-left: -10px;
+					li{
+						padding: 10px;
+						width: 50%;
+						float: left;
+						font-weight: 400;
+						i{
+							margin-right: 5px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

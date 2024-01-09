@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+{% extends 'basic.html' %} {% load static %} {% block body %}
+<div class="page-nav no-margin row">
+
+</div>
+
+<section class="search-bar" style="text-align: center;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form action="{% url 'search_view' %}" method="GET" style="max-width: 600px; width: 100%; margin: 0 auto; position: relative;">
+                    {% csrf_token %}
+                    <input type="text" name="q" placeholder=" Search... " style="width: 100%; box-sizing: border-box; border: 2px solid #3498db; border-radius: 25px; padding: 10px; margin-bottom: 10px; ">
+                    <button type="submit " style="background-color: #3498db; color: white; border: none; border-radius: 50%; padding: 10px; position: absolute; right: 0; top: 0; ">
+                        <i class="fas fa-search "></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-06 ">
+    <div class="container ">
+        <div class="row section-title ">
+            <h2>Our Blogs</h2>
+            <p><br>Empowering Lives Through Insightful Health Tips, Cutting-Edge HealthTech, Tech Trends, and Unveiling the Transformative Features of CareChainAI.</p>
+        </div>
+
+        <div class="row ">
+            {% for b in posts %}
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12 ">
+                <a href="/blog/{{b.id}} ">
+                    <article class="blog-sub ">
+                        <div class="blog-content ">
+                            <img src="{{ b.image.url }} ">
+                        </div>
+                        <div class="blog-content-section ">
+                            <div class="blo-content-title ">
+                                <h4>{{ b.title|safe }}</h4>
+                                <h4 style="color: red; ">Read full </h4>
+                            </div>
+                            <div class="blog-admin ">
+                                <ol>
+                                    <li><i class="far fa-user "></i>By CareChainAI</li>
+                                    <li><i class="far fa-calendar-alt "></i> {{ b.date|date:"F j, Y " }}</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+            </div>
+
+            {% if forloop.counter|divisibleby:3 %}
+        </div>
+        <div class="row ">
+            {% endif %} {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+<section style="background-color: #f8f8f8; padding: 20px; text-align: center;" class="subscribe-section">
+    <div style="max-width: 800px; margin: 0 auto;" class="container">
+        <h2>Get an email whenever CareChainAI publishes</h2>
+        <p>Subscribe to our newsletter to stay updated with the latest articles.</p>
+
+        <form method="post" action="{% url 'subscribe' %}" style="display: flex; flex-direction: column; align-items: center;">
+            {% csrf_token %}
+            <div style="margin-bottom: 15px;" class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required style="padding: 10px; width: 100%; box-sizing: border-box;">
+            </div>
+            <button type="submit" style="background-color: #3498db; color: white; border: none; border-radius: 5px; padding: 10px 20px; cursor: pointer;">Subscribe</button>
+        </form>
+    </div>
+</section>
+
+
+{% endblock %}
+
+
+
+</body>
+
+<script src="../static/js/jquery-3.2.1.min.js "></script>
+<script src="../static/js/popper.min.js "></script>
+<script src="../static/js/bootstrap.bundle.min.js "></script>
+<script src="../static/plugins/scroll-fixed/jquery-scrolltofixed-min.js "></script>
+<script src="../static/js/script.js "></script>
+
+</html>

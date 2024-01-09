@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CareChainAI</title>
+    <link rel="shortcut icon" href="{% static '../static/images/fav.png' %}" type="image/x-icon">
+    <link href="{% static 'https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static '../static/images/fav.jpg' }">
+    <link rel="stylesheet" href="{% static '../static/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css'%}">
+    <link rel="stylesheet" href="{% static '../static/css/all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/style.css' %} " />
+</head>
+
+
+<body> {% load static %}
+    <header class="header-container">
+        <div class="top-row row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 logocol">
+                        <img src="{% static '../static/images/image-1@2x.png' %}" alt="" style="width: 80px;">
+                        <a class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fas fa-bars"></i>
+                        </a>
+                    </div>
+                    <div class="col-md-9 d-none d-md-block infocol">
+                        <ul>
+                            <li><i class="fas fa-mobile-alt"></i> carechainai@gmail.com</li>
+                            <!-- <li><i class="far fa-envelope"></i> +91 9159669599</li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="navbarNavDropdown" class="nav-row d-none d-md-flex row">
+            <div class="container">
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="/about/">About Us</a></li>
+                    <!-- <li><a href="services.html">Service</a></li> -->
+                    <li><a href="/blog/">Blogs</a></li>
+                    <li><a href="/contact/">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </header>
+
+
+    {% block body %} {% endblock %}
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 about">
+                    <h2>About CareChainAI</h2>
+                    <p>CareChainAI is a revolutionary healthcare platform that connects patients with specialized doctors, offers secure health record management, virtual consultations, and more.</p>
+
+                    <div class="foot-address">
+                        <div class="icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="addet">
+                            Mumbai, India
+                        </div>
+                    </div>
+                    <div class="foot-address">
+                        <div class="icon">
+                            <i class="far fa-envelope-open"></i>
+                        </div>
+                        <div class="addet">
+                            carechainai@gmail.com
+                            <br>
+                        </div>
+                    </div>
+                    <div class="foot-address">
+                        <div class="icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="addet">
+                            +91 8291988205
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 fotblog">
+                    <h2>Latest News</h2>
+                    <div class="blohjb">
+                        <p>Introducing CareChainAI: Transforming Healthcare with Technology</p>
+                        <span>August 15, 2023</span>
+                    </div>
+                    <div class="blohjb">
+                        <p>Virtual Consultations: The Future of Healthcare</p>
+                        <span>August 10, 2023</span>
+                    </div>
+                    <!-- Add more latest news items here -->
+                </div>
+                <div class="col-md-3 glink">
+                    <ul>
+                        <li><a href="{% url 'home' %}"><i class="fas fa-angle-double-right"></i>Home</a></li>
+                        <li><a href="/about/"><i class="fas fa-angle-double-right"></i>About Us</a></li>
+                        <!-- <li><a href="services.html"><i class="fas fa-angle-double-right"></i>Services</a></li>
+                        <li><a href="blog.html"><i class="fas fa-angle-double-right"></i>Blog</a></li> -->
+                        <li><a href="/contact/"><i class="fas fa-angle-double-right"></i>Contact Us</a></li>
+                        <!-- Add more links if needed -->
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <div class="copy">
+        <div class="container">
+            <a href="#">2023 &copy; All Rights Reserved | Designed and Developed by carechainai.com</a>
+            <span>
+                <a href="https://twitter.com/CareChainAI?t=-DLYlUGRSAnhz9BSWj5qPg&s=09"> <i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/carechainai/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://instagram.com/carechainai?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"><i class="fab fa-instagram"></i></a>
+           
+            <a><i class="fab fa-facebook-f"></i></a>
+        </span>
+        </div>
+    </div>
+
+
+
+</body>
+{% block js %}
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'js/jquery-scrolltofixed-min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.3/jquery.scrollTo.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+{% endblock %}
+
+</html>

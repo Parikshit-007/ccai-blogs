@@ -1,0 +1,115 @@
+<!DOCTYPE html> {% extends 'basic.html' %} {% load static %}
+<html lang="en">
+{% block body %}
+<!--    Services Starts Here   -->
+
+
+
+<div class="slider slider-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 imageslid">
+                <img src="{% static '../static/images/about1.png' %}" alt="">
+            </div>
+            <div class="col-md-6 contentslid">
+                <h1>CareChainAI</h1>
+                <p>CareChainAI transforms healthcare access in India, seamlessly connecting patients with specialized clinics, AI-guided appointments, and secure health records on the blockchain. Our commitment to convenience and personalized care enhances
+                    the healthcare journey for all. Welcome to a new era of empowered well-being with CareChainAI.</p>
+                <!-- <button type="button" class="btn btn-outline-light">Light</button>
+                <button type="button" class="btn btn-outline-light">Light</button> -->
+            </div>
+        </div>
+    </div>
+</div>
+<section class="services container-fluid">
+    <div class="container">
+        <div class="row section-title">
+            <h2>Our Services</h2>
+            <p>Discover our range of services that prioritize your health and well-being.</p>
+        </div>
+        <div class="servic-row row">
+            <div class="servic-col col-md-4">
+                <div class="servcover">
+                    <img src="{% static '../static/images/icon/doctor_search-512 (1).jpg' %}" alt="">
+                    <h4>Doctor Directory</h4>
+                    <p>Effortlessly find and book appointments with specialized doctors in various medical fields</p>
+                </div>
+            </div>
+            <div class="servic-col col-md-4">
+                <div class="servcover">
+                    <img src="{% static '../static/images/icon/appointment_icon (3).jpg' %}" alt="">
+                    <h4>Appointment Booking</h4>
+                    <p>Effortlessly schedule appointments with specialized doctors for convenient healthcare access.
+                    </p>
+                </div>
+            </div>
+            <div class="servic-col col-md-4">
+                <div class="servcover">
+                    <img src="{% static '../static/images/icon/ehr_icon (2).jpg' %}" alt="">
+                    <h4>Health Records Management</h4>
+                    <p>Safely store, manage, and access personal health records using secure blockchain technology.</p>
+                </div>
+            </div>
+            <div class="servic-col col-md-4">
+                <div class="servcover">
+                    <img src="{% static '../static/images/icon/pres (2).jpg' %}" alt="">
+                    <h4>Prescription Storage and Medication Reminders</h4>
+                    <p>Keep track of prescriptions and receive reminders for medication doses, ensuring adherence to treatment plans.</p>
+                </div>
+            </div>
+            <div class="servic-col col-md-4">
+                <div class="servcover">
+                    <img src="{% static '../static/images/icon/anony (1).jpg' %}" alt="">
+                    <h4>Anonymous Patient-Doctor Communication</h4>
+                    <p> Interact with healthcare professionals anonymously, asking medical questions and receiving expert guidance while safeguarding your privacy.</p>
+                </div>
+            </div>
+            <div class="servic-col col-md-4">
+                <div class="servcover">
+                    <img src="{% static '../static/images/icon/more-icon-1 (2).jpg' %}" alt="">
+                    <h4>Many More</h4>
+                    <p>We will reveal soon!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="launching-soon" class="launching-soon">
+    <div class="container">
+        <div class="section-title row">
+            <h2>Launching Soon</h2>
+        </div>
+        <div class="launching-content">
+            <p>We're excited to bring you a revolutionary healthcare experience. Our platform is under development and will be launching soon to transform the way you access healthcare.</p>
+            <p>Stay tuned for updates and be the first to experience CareChainAI's innovative services.</p>
+        </div>
+    </div>
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const section = document.getElementById('launching-soon');
+
+        function fadeInSection() {
+            section.style.opacity = '1';
+            section.style.transform = 'translateY(0)';
+        }
+
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+            );
+        }
+
+        window.addEventListener('scroll', function() {
+            if (isElementInViewport(section)) {
+                fadeInSection();
+                window.removeEventListener('scroll', this);
+            }
+        });
+    });
+</script>
+{% endblock %}

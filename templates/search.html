@@ -1,0 +1,57 @@
+{% extends 'basic.html' %} {% load static %} {% block body %}
+<div class="page-nav no-margin row"></div>
+<section class="search-bar" style="text-align: center;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form action="{% url 'search_view' %}" method="GET" style="max-width: 600px; width: 100%; margin: 0 auto; position: relative;">
+                    {% csrf_token %}
+                    <input type="text" name="q" placeholder=" Search... " style="width: 100%; box-sizing: border-box; border: 2px solid #3498db; border-radius: 25px; padding: 10px; margin-bottom: 10px; ">
+                    <button type="submit " style="background-color: #3498db; color: white; border: none; border-radius: 50%; padding: 10px; position: absolute; right: 0; top: 0; ">
+                        <i class="fas fa-search "></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-06" id="search-results">
+    <div class="container">
+        <div class="row section-title">
+            <h2>Search Results</h2>
+            {% if form.is_valid %}
+            <p>Results for: <strong>{{ form.cleaned_data.q }}</strong></p>
+            {% endif %}
+        </div>
+
+        <div class="row">
+            {% if results %} {% for result in results %}
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <a href="/blog/{{ result.id }}">
+                    <article class="blog-sub">
+                        <div class="blog-content">
+                            <img src="{{ result.image.url }}" alt="{{ result.title }}">
+                        </div>
+                        <div class="blog-content-section">
+                            <div class="blo-content-title">
+                                <h4>{{ result.title |safe }}</h4>
+                                <p style="color: red;">Read full</p>
+                            </div>
+                            <div class="blog-admin">
+                                <ol>
+                                    <li><i class="far fa-user"></i>By CareChainAI</li>
+                                    <li><i class="far fa-calendar-alt"></i> {{ result.date|date:"F j, Y" }}</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+            </div>
+            {% endfor %} {% else %}
+            <p>No results found.</p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

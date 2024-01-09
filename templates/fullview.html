@@ -1,0 +1,35 @@
+{% extends 'basic.html' %} {% load static %} {% block body %}
+<div class="page-nav no-margin row">
+
+</div>
+
+<section class="bg-06" id="blog-full-view">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <article class="blog-full-content">
+                    <div class="blog-content-section">
+                        <div class="blo-content-title">
+                            <h2>{{ post.title }}</h2>
+                        </div>
+                        <div class="blog-admin">
+                            <ol>
+                                <li><i class="far fa-user"></i>By CareChainAI</li>
+                                <li><i class="far fa-calendar-alt"></i> {{ post.date|date:"F j, Y" }}</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="blog-content-img">
+                        <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                    </div>
+                    <div class="blog-content-section">
+                        <div class="blo-content-title">
+                            <p>{{ post.content|safe }}</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
