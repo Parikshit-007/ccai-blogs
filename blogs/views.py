@@ -91,8 +91,8 @@ def add_post(request):
         return redirect('blog_list')
     return render(request, 'blog/add_post.html')
 
-def view_post(request, post_id):
-    post = get_object_or_404(BlogPost, pk=post_id)
+def view_post(request, post_title):
+    post = get_object_or_404(BlogPost, title=post_title)
     return render(request, 'fullview.html', {'post': post})
 
 @login_required

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-
+<head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9532632720524307"
+     crossorigin="anonymous"></script></head>
 {% extends 'basic.html' %} {% load static %} {% block body %}
 <div class="page-nav no-margin row">
 
@@ -31,7 +32,7 @@
         <div class="row ">
             {% for b in posts %}
             <div class="col-lg-4 col-md-4 col-sm-6 col-12 ">
-                <a href="/blog/{{b.id}} ">
+                <a href="/blog/{{b.title}} ">
                     <article class="blog-sub ">
                         <div class="blog-content ">
                             <img src="{{ b.image.url }} ">

@@ -1,3 +1,4 @@
+
 """
 Django settings for launching project.
 
@@ -13,6 +14,12 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
+
+import os.path  
+import sys
+
+PROJECT_ROOT = os.path.normpath(os.path.dirname(__file__))
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,8 +33,12 @@ SECRET_KEY = 'django-insecure-o7%a2--f3*v@3%ky!h6ft41%)_k87$z!vfdz$dp9&njsgi+4a1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [ 'www.carechainai.com' 'carechainai.com','156.67.214.154','127.0.0.1']
-
+ALLOWED_HOSTS = ['*', '13.60.41.51', 'www.carechainai.com', 'carechainai.com', '127.0.0.1']
+APPEND_SLASH = True
+SECURE_SSL_REDIRECT = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Application definition
 
@@ -66,7 +77,7 @@ ROOT_URLCONF = 'launching.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [ os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,6 +89,9 @@ TEMPLATES = [
         },
     },
 ]
+
+
+
 
 WSGI_APPLICATION = 'launching.wsgi.application'
 
@@ -133,6 +147,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
